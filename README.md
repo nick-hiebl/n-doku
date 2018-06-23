@@ -28,6 +28,7 @@ subsections placed vertically.
 
 By this definition traditional sudoku puzzles (or 9-doku's) can also be
 called (3,3)-doku's, as they consist of 3 by 3 subsections. A more
-interesting example of an (m,n)-doku is in
-![traditional 8x8 sudokus](http://markhuckvale.com/games/sudoku/variants/gp8-s.png)
-or some common sudokus of other non-square dimensions.
+interesting example of an (m,n)-doku is in traditional 8x8 sudokus or
+some common sudokus of other non-square dimensions.
+
+![An 8x8 sudoku](http://markhuckvale.com/games/sudoku/variants/gp8-s.png)
