@@ -22,22 +22,22 @@ Overall the grid is of size *mn* by *mn*. The values in each cell range
 from 1 to *mn*. As above no two cells in the same row or column can
 contain the same value. However there is a distinction in the way
 that subsections are made. Subsections have dimensions *m* by *n*, in
-this case meaning *m* cells horizontally and *n* cells vertically.
-Consequently there are *n* subsections placed side by side, and *m*
-subsections placed vertically.
+this case meaning *m* cells vertically and *n* cells vertically.
+Consequently there are *n* subsections placed above each other, and *m*
+subsections placed side by side.
 
 By this definition traditional sudoku puzzles (or 9-doku's) can also be
 called (3,3)-doku's, as they consist of 3 by 3 subsections. A more
 interesting example of an (m,n)-doku is in traditional 8x8 sudokus or
-some common sudokus of other non-square dimensions. A (4,2)-doku is
+some common sudokus of other non-square dimensions. A (2,4)-doku is
 shown below, such sudokus might be typically called 8x8 sudokus.
 
-![A (4,2)-doku](http://markhuckvale.com/games/sudoku/variants/gp8-s.png)
+![A (2,4)-doku](http://markhuckvale.com/games/sudoku/variants/gp8-s.png)
 
 This definition gives slightly more flexibility in the kinds of puzzles
 we can specify. For example consider a 12x12 sudoku. Such a sudoku will
-typically consist of 4 by 3 subsections. However, it would also be valid
-to make a 12x12 sudoku with 6 by 2 subsections, and as my aim is to
+typically consist of 3 by 4 subsections. However, it would also be valid
+to make a 12x12 sudoku with 2 by 6 subsections, and as my aim is to
 try to implement generic sudoku solving I will use this definition to
 allow me to solve a wider range of possible puzzles (and possibly study
-the differences in solving a (4,3)-doku versus a (6,2)-doku).
+the differences in solving a (3,4)-doku versus a (2,6)-doku).
