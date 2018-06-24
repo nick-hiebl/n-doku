@@ -1,3 +1,4 @@
+using Base.Profile;
 
 function print_sudoku(m, n, sudoku)
     println(m, " ", n);
@@ -25,12 +26,13 @@ function solve(m, n, sudoku)
         # Determine if v is a valid option for this cell
         valid = true;
         for k in 1:m*n
-            if (k != j && sudoku[i, k] == v) || (k != i && sudoku[k, j] == v)
+            if (k != j && sudoku[i, k] == v) ||
+                    (k != i && sudoku[k, j] == v)
                 valid = false;
                 break;
             end
         end
-        # Check if we ca
+        # Check if v has been used in this box
         if valid
             bi = div(i-1, m) * m + 1;
             bj = div(j-1, n) * n + 1;
@@ -55,9 +57,16 @@ function solve(m, n, sudoku)
     return false;
 end
 
-m, n = [parse(Int64, s) for s = split(readline(STDIN), " ")];
+function try_solve(m, n, sudoku)
+    s = copy(sudoku)
+    solve(m, n, s)
+end
 
-sudoku = round(Int64, readdlm(STDIN));
+f = open("sudokus/6.sudoku");
+m, n = [parse(Int64, s) for s = split(readline(f), " ")];
+
+sudoku_raw = round(Int64, readdlm(f));
+sudoku = copy(sudoku_raw);
 
 print_sudoku(m, n, sudoku);
 
