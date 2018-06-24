@@ -76,8 +76,8 @@ int solve(int m, int n, int **sudoku) {
         return TRUE;
     }
 
-    printf("%d %d\n", i, j);
-    print_sudoku(m, n, sudoku);
+    // printf("%d %d\n", i, j);
+    // print_sudoku(m, n, sudoku);
 
     int v;
     for (v = 1; v <= m * n; v++) {
