@@ -14,6 +14,7 @@ function find_empty(m, n, sudoku)
     return (m * n + 1, m * n + 1);
 end
 
+# Finds an empty cell using the most constrained variable heuristic
 function smart_find_empty(m, n, sudoku, used_row, used_col, used_box)
     besti = m * n + 1;
     bestj = m * n + 1;
@@ -47,6 +48,8 @@ function smart_find_empty(m, n, sudoku, used_row, used_col, used_box)
     return (besti, bestj)
 end
 
+# Basic backtracking using the arrays storing whether certain digits
+# have already appeared to speed up checking.
 function smart_solve(m, n, sudoku, used_row, used_col, used_box)
 
     i, j = smart_find_empty(m, n, sudoku, used_row, used_col, used_box);
@@ -81,6 +84,9 @@ function smart_solve(m, n, sudoku, used_row, used_col, used_box)
     return false;
 end
 
+# Setup for the slightly smarter solve
+# Initialises arrays storing whether each type of digit has occurred in
+# each row, column and box and then passes this into the main function
 function smart_solve(m, n, sudoku)
     used_row = zeros(Int64, m*n, m*n);
     used_col = zeros(Int64, m*n, m*n);
