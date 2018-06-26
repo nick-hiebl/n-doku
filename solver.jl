@@ -165,10 +165,11 @@ function try_solve(m, n, sudoku)
     smart_solve(m, n, s);
 end
 
-f = open("sudokus/8.sudoku");
+f = open("sudokus/2.sudoku");
 m, n = [parse(Int64, s) for s = split(readline(f), " ")];
 
 sudoku_raw = round(Int64, readdlm(f));
+close(f);
 sudoku = copy(sudoku_raw);
 
 print_sudoku(m, n, sudoku);
@@ -176,4 +177,18 @@ print_sudoku(m, n, sudoku);
 x = smart_solve(m, n, sudoku);
 println(x);
 
+print_sudoku(m, n, sudoku);
+
+# Actual sudoku solve
+f = open("sudokus/4.sudoku");
+m, n = [parse(Int64, s) for s = split(readline(f), " ")];
+
+sudoku_raw = round(Int64, readdlm(f));
+close(f);
+
+print_sudoku(m, n, sudoku_raw);
+sudoku = copy(sudoku_raw);
+
+x = smart_solve(m, n, sudoku);
+println(x);
 print_sudoku(m, n, sudoku);
